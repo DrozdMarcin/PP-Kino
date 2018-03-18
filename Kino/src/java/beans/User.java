@@ -9,7 +9,8 @@ import java.util.logging.Logger;
 
 public class User 
 {
-    private String first_name,last_name,user,pwd;
+    private String first_name,last_name,user,pwd,email ;
+    
     
     public User()
     {
@@ -17,6 +18,7 @@ public class User
         last_name="";
         user="";
         pwd="";
+        email="";
     }        
  
     //----------------------------------//
@@ -30,8 +32,8 @@ public class User
     {
         return last_name;
     }
-
-    public String getUser() 
+    
+       public String getUser() 
     {
         return user;
     }
@@ -41,6 +43,10 @@ public class User
         return pwd;
     }
     
+    public String getEmail() {
+        return email;
+    }
+
     //----------------------------------//
     
     public void setFirst_name(String first_name) 
@@ -52,15 +58,20 @@ public class User
     {
         this.last_name =last_name;
     }
-
+    
     public void setUser(String user) 
     {
         this.user=user;
     }
-
+    
     public void setPwd(String pwd) 
     {
         this.pwd=pwd;
+    }
+    
+     public void setEmail(String email) 
+    {
+        this.email=email;
     }
     
     //----------------------------------//
@@ -72,7 +83,7 @@ public class User
             Db_Connection dbconn=new Db_Connection();
             Connection myconnection= dbconn.Connection();
 
-            String sqlString="INSERT INTO users (first_name,last_name,username,password) VALUES ('"+first_name+"','"+last_name+"','"+user+"','"+pwd+"')";
+            String sqlString="INSERT INTO users (first_name,last_name,username,password,email) VALUES ('"+first_name+"','"+last_name+"','"+user+"','"+pwd+"','"+email+"')";
             
             Statement myStatement = myconnection.createStatement();
             
@@ -127,6 +138,7 @@ public class User
                     last_name = rs.getString("last_name");
                     user= rs.getString("username");
                     pwd = rs.getString("password");
+                    email= rs.getString("email");
                 }
                 
                 myStatement.close();

@@ -1,7 +1,10 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 
     <head>
         <title>Strona Wylogowania</title>
+          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
 
@@ -10,9 +13,10 @@
         <br><br>
         <br><br>
         <br><br>
-        <center><b>Zostales poprawnie wylogowany!</b></center>
+        <center><b>Zostałeś poprawnie wylogowany!</b></center>
         <br>
-        <center><a href="login_form.jsp">Log in</a></center>
+        <center><a href="index.jsp">Powrót do strony głownej</a></center>
+        <center><a href="login_form.jsp">Zaloguj się ponownie</a></center>
         
     </body>
 </html>

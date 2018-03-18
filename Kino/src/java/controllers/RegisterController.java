@@ -17,21 +17,18 @@ public class RegisterController extends HttpServlet
         {
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
-            try 
-            {
+            try {
                 User user = new User();
      
                 user.setFirst_name(request.getParameter("first_name"));
                 user.setLast_name(request.getParameter("last_name"));
                 user.setUser(request.getParameter("user"));
                 user.setPwd(request.getParameter("pwd"));
+                user.setEmail(request.getParameter("email"));
 
                 user.RegisterUser();
-
-                out.println("<br>");
-                out.println("<br>");
-                out.println("<center>Udało sie !</center>");
-                RequestDispatcher rd = request.getRequestDispatcher("login_form.jsp");
+                
+                 RequestDispatcher rd = request.getRequestDispatcher("login_form.jsp");
                 rd.forward(request,response);
             } finally {out.close();}
         }
