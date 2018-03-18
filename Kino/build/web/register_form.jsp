@@ -10,7 +10,9 @@
     </head>
     <body>
     <center> <div id="pasek"><h1> Rejestracja </h1></div> </center>
-    <center>  <div id="pasekmenu"><td>
+    <center>  <div id="pasekmenu">
+            <a href="index.jsp"><b>Strona Główna</b></a>
+            <td>
                 </br></br></br>
                 
         <jsp:useBean id="user" scope="request" class="beans.User"></jsp:useBean>
