@@ -15,9 +15,7 @@
     </head>
     <body>
     <center> <div id="pasek"><h1>Logowanie</h1></div> </center>
-    <center>  <div id="pasekmenu">
-            <a href="index.jsp"><b>Strona Główna</b></a>
-            <td>
+    <center>  <div id="pasekmenu"><td>
                 
         <jsp:useBean id="user" scope="request" class="beans.User"></jsp:useBean>
 

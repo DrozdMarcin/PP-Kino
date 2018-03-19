@@ -8,13 +8,16 @@
     </head>
      <body>
      
-         <div> <center> <div id="pasek"><h1> >>> Repertuar  <<<</h1></div> </center>
-    <center>  <div id="pasekmenu">
-            <a href="index.jsp"><b>Strona Główna</b></a>
-        </div>   </center></div> 
-  
-    </br></br></br></br></br></br></br>
-     <center> <h1> //tabela <- rep.</h1> </center>
+    <center> <div id="pasek"><h1> >>> Repertuar  <<<</h1></div> </center>
+    <center>  <div id="pasekmenu"> 
+            
+            
+            // TABELA */
         
         
+        </div> </center>
+    
+    
+    
+    </body>
 </html>
