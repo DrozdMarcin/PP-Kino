@@ -14,6 +14,7 @@ public class Repertuar
         
     public Repertuar ()
     {
+        
         tytul="";
         opis="";
         godziny="";
@@ -22,7 +23,7 @@ public class Repertuar
         
     }        
  
-
+    
     public String getTytul() {
         return tytul;
     }
