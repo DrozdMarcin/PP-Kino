@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
 import beans.User;
 import javax.servlet.http.HttpSession;
+import java.security.*;
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LoginController extends HttpServlet 
 {
@@ -22,9 +26,13 @@ public class LoginController extends HttpServlet
                 User user = new User();
 
                 user.setUser(request.getParameter("user"));
-                user.setPwd(request.getParameter("pwd"));
+                byte[] bytesOfMessage = request.getParameter("pwd").getBytes("UTF-8");
+                MessageDigest md = MessageDigest.getInstance("MD5");
+                byte[] thedigest = md.digest(bytesOfMessage);
+                user.setPwd(Arrays.toString(thedigest));
 
-                if(User.LoginUser(request.getParameter("user"),request.getParameter("pwd")))
+
+                if(User.LoginUser(request.getParameter("user"),Arrays.toString(thedigest)))
                 {
                     User us = new User();
                     us.setUser(String.valueOf(request.getParameter("user")));
@@ -41,6 +49,8 @@ public class LoginController extends HttpServlet
                     out.println("Niepoprawny login lub hasło !");
                     out.println("<a href=\"login_form.jsp\">Sprobuj ponownie...</a>");
                 }    
+            } catch (NoSuchAlgorithmException ex) {
+                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
             } finally {out.close();}
         }
         
