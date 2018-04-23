@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
 import beans.User;
+import controllers.RegisterController;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -17,6 +18,17 @@ import java.util.logging.Logger;
 
 public class LoginController extends HttpServlet 
 {
+    public String HashMD5(String password){
+        String md5 = null;
+            try {
+                MessageDigest digest = MessageDigest.getInstance("MD5");
+                digest.update(password.getBytes(), 0, password.length());
+                md5 = new BigInteger(1, digest.digest()).toString(16);
+            } catch (NoSuchAlgorithmException ex) {
+                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+         return md5;
+    }
 
         protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
@@ -25,16 +37,8 @@ public class LoginController extends HttpServlet
             PrintWriter out = response.getWriter();
             User user = new User(); 
             user.setUser(request.getParameter("user"));
-            String md5 = null;
-            try {
-                MessageDigest digest = MessageDigest.getInstance("MD5");
-                digest.update(request.getParameter("pwd").getBytes(), 0, request.getParameter("pwd").length());
-                md5 = new BigInteger(1, digest.digest()).toString(16);
-            } catch (NoSuchAlgorithmException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            user.setPwd(md5);
-            if(User.LoginUser(request.getParameter("user"),md5))
+            user.setPwd(HashMD5(request.getParameter("pwd")));
+            if(User.LoginUser(request.getParameter("user"),HashMD5(request.getParameter("pwd"))))
             {
                 User us = new User();
                 us.setUser(String.valueOf(request.getParameter("user")));
