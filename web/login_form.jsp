@@ -16,6 +16,7 @@
     <body>
         <%-- wczytanie stałego nagłówka --%>
         <jsp:include page="subsites/header.jsp" />
+        
         <div id="main-container"  class="container">
 
             <div class="row">
@@ -32,25 +33,23 @@
 
                             <form action="LoginController" method="post">
 
-                                <div class="form-group ">
+                                <div class="form-group">
                                     <label>Login</label>
                                     <input  class="form-control" type="text" name="user" value="<jsp:getProperty name="user" property="user"/>">
-                                <small id="emailHelp" class="form-text text-muted">Nie masz konta? <a href="register_form.jsp">Zarejestruj się</a></small>
+                                    <small id="emailHelp" class="form-text text-muted">Nie masz konta? <a href="register_form.jsp">Zarejestruj się</a>.</small>
 
-                                <label>Hasło</label>
-                                <input class="form-control" type="password" name="pwd" value="<jsp:getProperty name="user" property="pwd"/>">
-                                <br>
-                                <input type="submit" class="btn btn-primary" value="Zaloguj się">
+                                    <label>Hasło</label>
+                                    <input class="form-control" type="password" name="pwd" value="<jsp:getProperty name="user" property="pwd"/>">
+                                    <br><br
+                                    <input type="submit" class="btn btn-primary" value="Zaloguj">
                             </div>
-
                         </form>       
                     </div>
                 </div>
-            </div>   
+            </div>
         </div>
-    </div>
 
-    <%-- wczytanie stałej stopki--%>
-    <jsp:include page="subsites/footer.jsp" />
-</body>
+        <%-- wczytanie stałej stopki--%>
+        <jsp:include page="subsites/footer.jsp" />
+    </body>
 </html>

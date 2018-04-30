@@ -21,14 +21,7 @@
         <div id="main-container" class="container">
 
             <div class="row">
-                <div class="col-lg-12">
-                TUTAJ BĘDIZE STRONA Z REPERTUAREM  
-                </div>
-                <div class="col-lg-12">
-                <br>
-                <a href="repertuar_form.jsp" class="btn btn-primary">Dodaj film do bazy</a>
-                </div>
-            </div>
+TREŚĆ STRONY            </div>
 
         </div>
         <%-- wczytanie stałej stopki--%>
