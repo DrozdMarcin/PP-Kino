@@ -40,7 +40,7 @@
 
                                     <label>Hasło</label>
                                     <input class="form-control" type="password" name="pwd" value="<jsp:getProperty name="user" property="pwd"/>">
-                                    <br><br
+                                    <br><br>
                                     <input type="submit" class="btn btn-primary" value="Zaloguj">
                             </div>
                         </form>       
