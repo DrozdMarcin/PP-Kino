@@ -25,23 +25,23 @@
                     </thead>
                     <tbody>
                         <td>Adres e-mail: </td>
-                            <td><input type="text" name="email" value="<jsp:getProperty name="user" property="email"/>"></td>
+                            <td><input type="text" name="email" required pattern="[^ @]*@[^ @]*" value="<jsp:getProperty name="user" property="email"/>"></td>
                         <tr>    
                             <td>Imie: </td>
-                            <td><input type="text" name="first_name" value="<jsp:getProperty name="user" property="first_name"/>"></td>
+                            <td><input type="text" name="first_name" required pattern="[A-Za-z]{1,15}" value="<jsp:getProperty name="user" property="first_name"/>"></td>
                         </tr>
                         <tr>    
                             <td>Nazwisko: </td>
-                            <td><input type="text" name="last_name" value="<jsp:getProperty name="user" property="last_name"/>"></td>
+                            <td><input type="text" name="last_name" required pattern="[A-Za-z]{1,15}" value="<jsp:getProperty name="user" property="last_name"/>"></td>
                         </tr>
                         
                         <tr>    
                             <td>Login: </td>
-                            <td><input type="text" name="user" value="<jsp:getProperty name="user" property="user"/>"></td>
+                            <td><input type="text" name="user" required value="<jsp:getProperty name="user" property="user"/>"></td>
                         </tr>
                         <tr>
                             <td>Haslo: </td>
-                            <td><input type="password" name="pwd" value="<jsp:getProperty name="user" property="pwd"/>"></td>
+                            <td><input type="password" name="pwd" required maxlength = "10" value="<jsp:getProperty name="user" property="pwd"/>"></td>
                         </tr>
                         
                         <tr>
