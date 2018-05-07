@@ -3,56 +3,74 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Dodaj repertuar</title>
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css" media="all">
-        <title>Dodawanie repertuaru</title>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+        <%-- dodanie wsparcia dla bootstrapa --%>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">         
+        <script src="bootstrap/js/bootstrap.min.js"></script>           
     </head>
+    
+    
     <body>
-    <center> <div id="pasek"><h1> Dodawanie repertuaru </h1></div> </center>
-    <center>  <div id="pasekmenu"><td>
-                </br></br></br>
-                
+            <%-- wczytanie stałego nagłówka --%>
+        <jsp:include page="subsites/header.jsp" />              
         <jsp:useBean id="repertuar" scope="request" class="beans.Repertuar"></jsp:useBean>
  
-        <form action="RepertuarController" method="post">
-            <center>
-                <table border="5" width="15%" cellpadding="5">
-                    <thead>
-                        <tr>
-                            <th colspan="2">Formularz dodawanie repertuaru</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <td>Tytul filmu: </td>
-                            <td><input type="text" name="tytul" value="<jsp:getProperty name="repertuar" property="tytul"/>"></td>
-                        <tr>    
-                            <td>Krótki opis: </td>
-                            <td><input type="text" name="opis" value="<jsp:getProperty name="repertuar" property="opis"/>"></td>
-                        </tr>
-                        <tr>    
-                            <td>Godziny projekcji: </td>
-                            <td><input type="text" name="godziny" value="<jsp:getProperty name="repertuar" property="godziny"/>"></td>
-                        </tr>
+        <div id="main-container"  class="container">
+
+            <div class="row">
+
+                <div class="col-lg-3">
+
+                </div>
+                <div class="card col-lg-6">
+                    <div class="card-header">
+                       Dodaj film do repertuaru
+                    </div>
+                    <div class="card-body">
+                 
+                            <form action="RepertuarController" method="post">
+
+                            <label>Tytuł Filmu:</label>
+                            <input type="text" class="form-control"  name="tytul" value="<jsp:getProperty name="repertuar" property="tytul"/>">
+                            
+                            <label>Krótki opis:</label>
+                            <input type="text" class="form-control" name="opis" value="<jsp:getProperty name="repertuar" property="opis"/>">
                         
-                        <tr>    
-                            <td>Bilety normalne /szt.: </td>
-                            <td><input type="text" name="biletynorm" value="<jsp:getProperty name="repertuar" property="biletynorm"/>"></td>
-                        </tr>
-                        <tr>
-                            <td>Bilety ulgowe /szt.</td>
-                            <td><input type="text" name="biletyulg" value="<jsp:getProperty name="repertuar" property="biletyulg"/>"></td>
-                        </tr>
+                            
+                            <label>Godziny projekcji:</label>
+                            <input type="text" class="form-control" name="godziny" value="<jsp:getProperty name="repertuar" property="godziny"/>">
                         
-                        <tr>
-                            <td><center><input type="reset" value="Resetuj" /></center></td>
-                            <td><center><input type="submit" value="Dodaj film"></center></td>
-                        </tr>
-                    </tbody>             
-                </table>
+                            <label>Bilety normalne /szt.:</label>
+
+                            <input type="text" class="form-control" name="biletynorm" value="<jsp:getProperty name="repertuar" property="biletynorm"/>">
+                        
+                        
+                            <label>Bilety ulgowe /szt.:</label>
+                            <input type="text" class="form-control" name="biletyulg" value="<jsp:getProperty name="repertuar" property="biletyulg"/>">
+                        
+                            <br><br>
+                            <center><input type="reset" class="btn btn-dark" value="Resetuj" />
+                            <input type="submit" class="btn btn-primary" value="Dodaj film"></center>
+       
             </center>
         </form>
-                     
-                   
+                        
+                        
+                        
+                            </div>
+                        </form>       
+                    </div>
+                </div>
+        </div>
+        
+
+        <%-- wczytanie stałej stopki--%>
+        <jsp:include page="subsites/footer.jsp" />
+
     </body>
 </html>
