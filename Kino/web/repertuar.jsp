@@ -1,6 +1,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="beans.User"%>
 
+
+<%@ page import = "java.io.*,java.util.*,java.sql.*"%>
+<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,16 +27,45 @@
         <div id="main-container" class="container">
 
             <div class="row">
-                <div class="col-lg-12">
-                TUTAJ BĘDIZE STRONA Z REPERTUAREM  
-                </div>
-                <div class="col-lg-12">
-                <br>
-                <a href="repertuar_form.jsp" class="btn btn-primary">Dodaj film do bazy</a>
-                </div>
+                <div class="col">
+                    <br>
+                    ----------- TEN PRZYCISK TYLKO DLA ZALOGOWANYCH<br>---------------
+                    <a href="repertuar_form.jsp" class="btn btn-primary">Dodaj film do bazy</a>
+                </div>  
+                <br><br>
+
+            </div>
+
+            <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
+                               url = "jdbc:mysql://localhost:3306/kino"
+                               user = "root"  password = ""/>
+
+            <sql:query dataSource = "${snapshot}" var = "result">
+                SELECT * from repertuarr;
+            </sql:query>
+
+
+
+            <div class="row">
+
+                <c:forEach var = "row" items = "${result.rows}">
+
+                    <div class="col-3">
+                        <img class="card-img-top rounded    " src="${row.img}" alt="Card image">
+                        <div class="card-body">
+                            <h4 class="card-title">${row.tytul}</h4>
+                            <p class="card-text">${row.opis}<br><b>Terminy: ${row.godziny}</b><br>normalny: ${row.biletynorm}<br>ulogowy: ${row.biletyulg}</p>
+                            <a href="#" class="btn btn-primary">Rezerwuj</a>
+                        </div>
+                    </div>
+                </c:forEach>
+
+
+
             </div>
 
         </div>
+
         <%-- wczytanie stałej stopki--%>
         <jsp:include page="subsites/footer.jsp" />
 

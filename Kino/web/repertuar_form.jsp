@@ -53,6 +53,9 @@
                             <label>Bilety ulgowe /szt.:</label>
                             <input type="text" class="form-control" name="biletyulg" value="<jsp:getProperty name="repertuar" property="biletyulg"/>">
                         
+                            <label>Link do obrazka</label>
+                            <input type="text" class="form-control" name="img" value="<jsp:getProperty name="repertuar" property="biletyulg"/>">
+                        
                             <br><br>
                             <center><input type="reset" class="btn btn-dark" value="Resetuj" />
                             <input type="submit" class="btn btn-primary" value="Dodaj film"></center>

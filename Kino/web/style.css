@@ -90,6 +90,13 @@ h1,h2,h3,h4 {
     height: 30px;
 }
 
+
+.poster {
+    width: 200px; /* You can set the dimensions to whatever you want */
+    height: 200px;
+    object-fit: cover;
+}
+
 #repertuarTabela
 {
 
