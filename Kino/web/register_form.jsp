@@ -40,18 +40,18 @@
 
                                         <label>Imie:</label>
 
-                                        <input type="text" class="form-control" name="first_name" required pattern="[A-Za-z]{1,15}"  value="<jsp:getProperty name="user" property="first_name"/>">
+                                        <input type="text" class="form-control" name="first_name" required pattern="[A-Za-z]{1,15}" value="<jsp:getProperty name="user" property="first_name"/>">
                                         <label>Nazwisko:</label>
 
-                                        <input type="text" class="form-control" name="last_name"  required pattern="[A-Za-z]{1,15}" value="<jsp:getProperty name="user" property="last_name"/>">
+                                        <input type="text" class="form-control" name="last_name" required pattern="[A-Za-z]{1,15}" value="<jsp:getProperty name="user" property="last_name"/>">
 
                                         <label>Login:</label>
-                                        <input type="text" class="form-control" name="user" required value="<jsp:getProperty name="user" property="user"/>">
+                                        <input type="text" class="form-control" name="user" value="<jsp:getProperty name="user" property="user"/>">
                                         <small id="emailHelp" class="form-text text-muted">Masz już konto? <a href="login_form.jsp">Zaloguj się</a>.</small>
 
                                         <label>Hasło:</label>
 
-                                        <input type="password" class="form-control" name="pwd" required maxlength = "10"  value="<jsp:getProperty name="user" property="pwd"/>">
+                                        <input type="password" class="form-control" name="pwd" value="<jsp:getProperty name="user" property="pwd"/>">
                                         <br>
                                         <input type="reset" class="btn btn-dark" value="Resetuj" />
                                         <input type="submit" class="btn btn-primary" value="Zarejestruj">
