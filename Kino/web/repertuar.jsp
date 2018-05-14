@@ -1,12 +1,17 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="beans.User"%>
 
-
 <%@ page import = "java.io.*,java.util.*,java.sql.*"%>
 <%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
+<% HttpSession sessionUser = request.getSession(true);
+    String us = (String) sessionUser.getAttribute("user");
 
+    User user1 = new User();
+    user1.setUser(us);
+    user1.GetUser(); %>
+    
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,8 +34,9 @@
             <div class="row">
                 <div class="col">
                     <br>
-                    ----------- TEN PRZYCISK TYLKO DLA ZALOGOWANYCH<br>---------------
+                    <% if(user1.getUser() != null) { %>
                     <a href="repertuar_form.jsp" class="btn btn-primary">Dodaj film do bazy</a>
+                    <% } %>
                 </div>  
                 <br><br>
 
@@ -55,7 +61,9 @@
                         <div class="card-body">
                             <h4 class="card-title">${row.tytul}</h4>
                             <p class="card-text">${row.opis}<br><b>Terminy: ${row.godziny}</b><br>normalny: ${row.biletynorm}<br>ulogowy: ${row.biletyulg}</p>
+                            <% if(user1.getUser() != null) { %>
                             <a href="#" class="btn btn-primary">Rezerwuj</a>
+                            <% } %>
                         </div>
                     </div>
                 </c:forEach>
