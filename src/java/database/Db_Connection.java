@@ -10,6 +10,7 @@ public class Db_Connection
     {
         try 
         {
+            
             Class.forName("com.mysql.jdbc.Driver");
             String user = "jdbc:mysql://localhost:3306/kino?user=root";
             Connection myConnection = DriverManager.getConnection(user);

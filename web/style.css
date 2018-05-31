@@ -97,6 +97,11 @@ h1,h2,h3,h4 {
     object-fit: cover;
 }
 
+
+.account-name:first-letter {
+    text-transform: uppercase;
+}
+
 #repertuarTabela
 {
 

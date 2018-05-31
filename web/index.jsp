@@ -4,13 +4,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Repertuar</title>
+        <title>Kino</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css" media="all">
-
+        
         <%-- dodanie wsparcia dla bootstrapa --%>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">         
         <script src="bootstrap/js/bootstrap.min.js"></script>     
+        <%-- ikony z bootstrapa --%>        
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
     </head>
 
@@ -18,14 +20,14 @@
     <body>
         <%-- wczytanie stałego nagłówka --%>
         <jsp:include page="subsites/header.jsp" />
-        <div id="main-container" class="container">
-
-            <div class="row">
-TREŚĆ STRONY            </div>
-
+        <div id="main-container-index" class="container-fluid">
+            <div class="caption">
+                  <span class="border">PROJEKT KINA</span><br>
+            </div>            
+            
         </div>
-        <%-- wczytanie stałej stopki--%>
-        <jsp:include page="subsites/footer.jsp" />
+            <%-- wczytanie stałej stopki--%>
+            <jsp:include page="subsites/footer.jsp" />
 
     </body>
 </html>

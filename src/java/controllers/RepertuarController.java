@@ -10,9 +10,6 @@ import javax.servlet.RequestDispatcher;
 import beans.Repertuar;
 import javax.servlet.http.HttpSession;
 
-
-//pobranie bazy danych
-
 public class RepertuarController extends HttpServlet 
 {
       
@@ -38,8 +35,6 @@ public class RepertuarController extends HttpServlet
             } finally {out.close();}
         
     }
-    
-    
             
 
            @Override

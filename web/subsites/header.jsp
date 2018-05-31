@@ -15,15 +15,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
 
-                        
+
                         <% if (user1.getUser() != null) { %>   
+
+
                         <li class="nav-item">
-                            <a class="nav-link" href="myaccount.jsp">
+                            <a class="nav-link" href="repertuar.jsp">   
+                                <span class="glyphicon glyphicon-user"></span> 
+                                <span class="account-name">
+                                    
                                 <%
-                                    out.print("Zalogowano:  ");
                                     out.print(user1.getFirst_name());
-                                    out.print("  ");
                                 %>
+                                </span>
                             </a>
                         </li>
                         <li class="nav-item">
