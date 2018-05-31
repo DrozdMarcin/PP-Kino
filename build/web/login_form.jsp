@@ -3,13 +3,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css" media="all">
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-        <%-- dodanie wsparcia dla bootstrapa --%>
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">         
-        <script src="bootstrap/js/bootstrap.min.js"></script>           
+      <%-- wczytanie stałego nagłówka --%>
+        <jsp:include page="subsites/head.jsp" />       
 
         <title>Logowanie</title>
     </head>

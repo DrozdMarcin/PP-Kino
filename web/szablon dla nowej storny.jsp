@@ -4,14 +4,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Repertuar</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css" media="all">
 
-        <%-- dodanie wsparcia dla bootstrapa --%>
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">         
-        <script src="bootstrap/js/bootstrap.min.js"></script>     
-
+           <title>NOWA STRONA</title>
+           
+        <%-- wczytanie wspólnego head --%>
+        <jsp:include page="subsites/head.jsp" />
     </head>
 
 
@@ -21,7 +18,10 @@
         <div id="main-container" class="container">
 
             <div class="row">
-TREŚĆ STRONY            </div>
+                
+                TREŚĆ STRONY    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            
+            </div>
 
         </div>
         <%-- wczytanie stałej stopki--%>

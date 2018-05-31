@@ -6,8 +6,7 @@
     User user1 = new User();
     user1.setUser(us);
     user1.GetUser(); %>
-        <%-- ikony z bootstrapa --%>        
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
 <div class="container-fullwidth">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
