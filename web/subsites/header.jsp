@@ -6,7 +6,8 @@
     User user1 = new User();
     user1.setUser(us);
     user1.GetUser(); %>
-
+        <%-- ikony z bootstrapa --%>        
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 <div class="container-fullwidth">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -20,7 +21,7 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="repertuar.jsp">   
+                            <a class="nav-link" href="myaccount.jsp">   
                                 <span class="glyphicon glyphicon-user"></span> 
                                 <span class="account-name">
                                     

@@ -11,7 +11,7 @@
     User user1 = new User();
     user1.setUser(us);
     user1.GetUser(); %>
-    
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col">
                     <br>
-                    <% if(user1.getUser() != null) { %>
+                    <% if (user1.getUser() != null) { %>
                     <a href="repertuar_form.jsp" class="btn btn-primary">Dodaj film do bazy</a>
                     <% } %>
                 </div>  
@@ -57,13 +57,22 @@
                 <c:forEach var = "row" items = "${result.rows}">
 
                     <div class="col-3">
-                        <img class="card-img-top rounded    " src="${row.img}" alt="Card image">
+                        <img class="card-img-top rounded" 
+                             src="
+                             <c:if test="${row.img!='NULL'}">
+                                 ${row.img}
+                             </c:if>
+                             <c:if test="${row.img=='NULL'}">
+                                 img/noimage.png
+                             </c:if>
+
+                             " alt="Card image">
                         <div class="card-body">
                             <h4 class="card-title">${row.tytul}</h4>
                             <p class="card-text">${row.opis}<br><b>Terminy: ${row.godziny}</b><br>normalny: ${row.biletynorm}<br>ulogowy: ${row.biletyulg}</p>
-                            <% if(user1.getUser() != null) { %>
+                                    <% if (user1.getUser() != null) { %>
                             <a href="#" class="btn btn-primary">Rezerwuj</a>
-                            <% } %>
+                            <% }%>
                         </div>
                     </div>
                 </c:forEach>
