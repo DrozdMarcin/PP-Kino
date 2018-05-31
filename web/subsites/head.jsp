@@ -10,3 +10,4 @@
         
         <%-- ikona strony --%>        
         <link rel="Shortcut icon" href="img/icon.png" />
+        

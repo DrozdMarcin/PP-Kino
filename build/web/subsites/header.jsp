@@ -16,9 +16,17 @@
                     <ul class="navbar-nav ml-auto">
 
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="repertuar.jsp">
+                                <span class="glyphicon glyphicon-film"></span> 
+                                Repertuar
+                            </a>
+                        </li>
+                        
                         <% if (user1.getUser() != null) { %>   
 
-
+                        
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="myaccount.jsp">   
                                 <span class="glyphicon glyphicon-user"></span> 
@@ -31,15 +39,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="repertuar.jsp">Repertuar</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="logout.jsp"> Wyloguj</a>
                         </li>
                         <% } else {%>
-                        <li class="nav-item">
-                            <a class="nav-link" href="repertuar.jsp">Repertuar</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="register_form.jsp">Rejestracja</a>
                         </li>

@@ -62,7 +62,7 @@
                                  img/noimage.png
                              </c:if>
 
-                             " alt="Card image">
+                             " alt="${row.tytul}">
                         <div class="card-body">
                             <h4 class="card-title">${row.tytul}</h4>
                             <p class="card-text">${row.opis}<br><b>Terminy: ${row.godziny}</b><br>normalny: ${row.biletynorm}<br>ulogowy: ${row.biletyulg}</p>
