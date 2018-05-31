@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 public class Repertuar 
 {
-    private String tytul,opis,godziny,biletynorm,biletyulg ;
+    private String tytul,opis,godziny,biletynorm,biletyulg,img ;
     
         
     public Repertuar ()
@@ -20,6 +20,7 @@ public class Repertuar
         godziny="";
         biletynorm="";
         biletyulg="";
+        img="";
         
     }        
  
@@ -30,6 +31,14 @@ public class Repertuar
 
     public void setTytul(String tytul) {
         this.tytul = tytul;
+    }
+    
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getOpis() {
@@ -75,7 +84,7 @@ public class Repertuar
             Db_Connection dbconn=new Db_Connection();
             Connection myconnection= dbconn.Connection();
 
-            String sqlString="INSERT INTO repertuarr (tytul,opis,godziny,biletynorm,biletyulg) VALUES ('"+tytul+"','"+opis+"','"+godziny+"','"+biletynorm+"','"+biletyulg+"')";
+            String sqlString="INSERT INTO repertuarr (tytul,opis,godziny,biletynorm,biletyulg,img) VALUES ('"+tytul+"','"+opis+"','"+godziny+"','"+biletynorm+"','"+biletyulg+"','"+img+"')";
             
             Statement myStatement = myconnection.createStatement();
             

@@ -62,7 +62,7 @@
                              <c:if test="${row.img!='NULL'}">
                                  ${row.img}
                              </c:if>
-                             <c:if test="${row.img=='NULL'}">
+                             <c:if test="${row.img=='NULL' || row.img==''}">
                                  img/noimage.png
                              </c:if>
 

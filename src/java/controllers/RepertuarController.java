@@ -27,6 +27,7 @@ public class RepertuarController extends HttpServlet
                 repertuar.setGodziny(request.getParameter("godziny"));
                 repertuar.setBiletynorm(request.getParameter("biletynorm"));
                 repertuar.setBiletyulg(request.getParameter("biletyulg"));
+                repertuar.setImg(request.getParameter("img"));
                 
                 repertuar.RegisterRepertuar();
                 
